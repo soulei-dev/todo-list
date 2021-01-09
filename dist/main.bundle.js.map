@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://Todo/./src/index.js"],"names":["test","console","log"],"mappings":";;;;AACA,IAAIA,IAAI,GAAG,IAAX;AACAC,OAAO,CAACC,GAAR,CAAYF,IAAZ,E","file":"main.bundle.js","sourcesContent":["\nlet test = 'ok';\nconsole.log(test);"],"sourceRoot":""}
