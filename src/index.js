@@ -9,7 +9,6 @@ form.addEventListener('submit', (event) => {
     const value = input.value;
     input.value = '';
     addTodo(value);
-    displayTodo();
 });
 
 const todos = [
@@ -41,11 +40,12 @@ const createTodoElement = (todo, index) => {
     return li;
 };
 
-const addTodo = text => (
+const addTodo = text => {
     todos.push({
-        text,
-        done: false
-    })
-);
+      text,
+      done: false
+    });
+    displayTodo();
+  };
 
 displayTodo();
