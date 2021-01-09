@@ -1,3 +1,1 @@
-
-let test = 'ok';
-console.log(test);
+import './style.css';
