@@ -4,7 +4,7 @@ const ul = document.querySelector('ul');
 const form = document.querySelector('form');
 const input = document.querySelector('form > input');
 
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', event => {
     event.preventDefault();
     const value = input.value;
     input.value = '';
@@ -22,6 +22,8 @@ const todos = [
     }, 
 ];
 
+console.log(todos);
+
 const displayTodo = () => {
     const todosNode = todos.map((todo, index) => {
         return createTodoElement(todo, index);
@@ -36,12 +38,16 @@ const createTodoElement = (todo, index) => {
     buttonDelete.classList.add('delete-todo');
     buttonDelete.innerHTML = 'Supprimer';
     buttonDelete.addEventListener('click', event => {
+        event.stopPropagation();
         deleteTodo(index);
     })
     li.innerHTML = `
-    <span class="todo ${ todo.done ? 'done' : ''}"></span>
+    <i class="todo ${ todo.done ? 'fas fa-check' : ''}"></i>
     <p>${ todo.text }</p>
     `;
+    li.addEventListener('click', event => {
+        toggleTodo(index);
+    });
     li.appendChild(buttonDelete);
     return li;
 };
@@ -54,8 +60,13 @@ const addTodo = text => {
     displayTodo();
   };
 
-  const deleteTodo = (index) => {
+  const deleteTodo = index => {
       todos.splice(index, 1);
+      displayTodo();
+  };
+
+  const toggleTodo = index => {
+      todos[index].done = !todos[index].done;
       displayTodo();
   }
 

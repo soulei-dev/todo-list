@@ -51,10 +51,6 @@ li .todo {
     margin-right: 15px;
 }
 
-li .todo.done {
-    background: rgb(70, 70, 70);
-}
-
 form {
     display: flex;
     margin-bottom: 20px;
