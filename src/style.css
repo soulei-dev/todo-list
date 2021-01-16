@@ -78,6 +78,7 @@ button {
     border-radius: 3px;
     margin: 0px 5px;
     cursor: pointer;
+    outline: 0;
 }
 
 .delete-todo {
