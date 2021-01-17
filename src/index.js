@@ -20,7 +20,7 @@ const todos = [
     {
         text: 'Apprendre React.js !',
         done: false,
-        editMode: true
+        editMode: false
     }, 
 ];
 
@@ -85,10 +85,13 @@ const createTodoEditElement = (todo, index) => {
 };
 
 const addTodo = text => {
-    todos.push({ 
-      text,
-      done: false
-    });
+    text = text.trim();
+    if (text) {
+        todos.push({ 
+            text,
+            done: false
+          });
+    }
     displayTodo();
   };
 
